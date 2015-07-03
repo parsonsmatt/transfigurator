@@ -19,7 +19,7 @@ end
 Or, more concisely:
 
 ```ruby
-events.each { |e| state = transformations(e, state).call(e, state) }
+events.reduce(state) { |*a| transformations(*a)[*a] }
 ```
 
 ## Installation
